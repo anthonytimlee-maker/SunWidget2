@@ -57,7 +57,7 @@ class PermissionActivity : AppCompatActivity() {
         val mgr = AppWidgetManager.getInstance(this)
         val ids = mgr.getAppWidgetIds(ComponentName(this, SunWidgetProvider::class.java))
         ids.forEach { SunWidgetProvider.updateWidget(this, mgr, it) }
-        SunUpdateJobService.schedule(this)
+        SunAlarmReceiver.schedule(this)
         finish()
     }
 }
